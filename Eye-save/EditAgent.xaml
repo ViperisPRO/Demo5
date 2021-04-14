@@ -1,0 +1,50 @@
+﻿<Window x:Class="Eye_save.EditAgent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Eye_save"
+        mc:Ignorable="d"
+        Title="Добавить агента" Height="450" Width="800" FontFamily="Century Gothic">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="792"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Margin="10,0,10,10"
+            VerticalAlignment="Bottom" 
+            Orientation="Vertical" Height="400">
+            <TextBlock><Label>Наименование</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox></TextBlock>
+            <TextBlock>
+            <Label>Тип Агента</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>Приоритет</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>Логотип компании</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>Адрес</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>ИНН</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>КПП</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>Имя директора</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>Телефон</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <TextBlock>
+            <Label>E-mail</Label> <TextBox Width="100" Background="#FFFFE9F9"></TextBox>
+            </TextBlock>
+            <Button Content="Сохранить" Background="#FFB175EE" />
+        </StackPanel>
+
+    </Grid>
+</Window>

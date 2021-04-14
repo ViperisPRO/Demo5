@@ -1,0 +1,87 @@
+﻿<Window x:Class="Eye_save.AgentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Eye_save"
+        mc:Ignorable="d"
+        Title="AgentsWindow" Height="450" Width="800" FontFamily="Century Gothic">
+    <Grid>
+        <!-- Создание колонок -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Боковой столбик -->
+        <StackPanel
+            Margin="10,0,10,10"
+            VerticalAlignment="Bottom" 
+            Orientation="Vertical" Height="109">
+            <!-- Кнопка "Приоритет" -->
+            <Button 
+                Content="Изменить приоритет" FontFamily="Century Gothic"
+                Click="Preoritet" Background="#FFB175EE" Height="35" Margin="0,0,-15,0"/>
+            <!-- Кнопка "Редактировать Агента" -->
+            <Button 
+                Content="Редактировать Агента" FontFamily="Century Gothic"
+                Click="ReEditAgent" Background="#FFB175EE" Height="35" Margin="0,0,-15,0"/>
+            <!-- Кнопка "Добавить Агента" -->
+            <Button 
+                Content="Добавить Агента" FontFamily="Century Gothic"
+                Click="EditAgent" Background="#FFB175EE" Height="35" Margin="0,0,-15,0"/>
+        </StackPanel>
+
+        <!-- Настрой 2 столбца -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <!-- Поле для данных -->
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+
+                <!-- Поле поиска -->
+                <Label Content="Поиск: " FontFamily="Century Gothic" />
+                <!-- Текстовое поле для поиска -->
+                <TextBox 
+                    x:Name="SearchTextBox"  Background="#FFFFE9F9" 
+                    MinWidth="100"/>
+                <Label Content="Отсортировать Агентов: " FontFamily="Century Gothic" />
+                <!-- Кнопка "Отсортировать" -->
+                <Button Content="Отсортировать" Width="100" Background="#FFB175EE" />
+            </StackPanel>
+
+            <!-- Настройка поля для вывода данных" -->
+            <DataGrid 
+                Grid.Row="1" 
+                CanUserAddRows="false"
+                Name="MainDataGrid"
+                ItemsSource="{Binding Agents}"
+                AutoGenerateColumns="False">
+
+                <DataGrid.Columns>
+                    <!-- Вывод поля "Наименование" -->
+                    <DataGridTextColumn
+                    Header="Наименование" FontFamily="Century Gothic" 
+                    Binding="{Binding Title}"/>
+                    <DataGridTextColumn 
+                    Header="Тип Агента" FontFamily="Century Gothic"
+                    Binding="{Binding AgentTypeID}"/>
+                    <DataGridTextColumn 
+                    Header="Телефон" FontFamily="Century Gothic"
+                    Binding="{Binding Phone}"/>
+                    <DataGridTextColumn 
+                    Header="Количество продаж в год" FontFamily="Century Gothic"
+                    Binding="{Binding SaleDate}"/>
+                    <DataGridTextColumn 
+                    Header="Размер скидки" FontFamily="Century Gothic"
+                    Binding="{Binding SaleDate}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>
